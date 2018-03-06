@@ -7,13 +7,12 @@ var pathCarte;
 $("#download").click(function() {
 
 
+
         map.once('postcompose', function(event) {
             var canvas = event.context.canvas;
             var quality = 1 ;// 0 to 1
             var folderpath = cordova.file.applicationStorageDirectory;
             var filename = 'carte1.png';
-
-
 
             canvas.toBlob(function(blob){
               //  console.log(blob.toDataURL())
@@ -25,15 +24,10 @@ $("#download").click(function() {
             centreCarte = map.getView().getCenter();
             pathCarte = folderpath + filename;
 
-            alert(empriseCarte)
-            alert(centreCarte)
             insertCarte(empriseCarte,zoomCarte,centreCarte,pathCarte);
 
         });
-
         map.renderSync();
-
-
 });
 
 
@@ -66,4 +60,22 @@ function savebase64AsImageFile(folderpath,filename,DataBlob){
             });
         });
     })
+}
+
+
+//Pour supprimer les cartes hors ligne dans la mémoire interne du mobile
+function supprimerCarte(){
+    path = 'file:///data/user/0/com.adobe.phonegap.app/';
+    filename = 'carte1.png';
+    window.resolveLocalFileSystemURL(path, function(dir) {
+        dir.getFile(filename, {create:false}, function(fileEntry) {
+            fileEntry.remove(function(){
+                alert('fichier supprimé')
+            },function(error){
+                alert('Erreur de supression')
+            },function(){
+                alert('le fichier nexiste pas')
+            });
+        });
+    });
 }

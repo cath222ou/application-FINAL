@@ -177,12 +177,12 @@
     </style>
 
 
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <title>Hello World</title>
-</head>
+    <!-- <link rel="stylesheet" type="text/css" href="css/index.css" /> -->
+     <title>Hello World</title>
+ </head>
 
-<body>
-<!--Page d'acceuil-->
+ <body>
+ <!--Page d'acceuil-->
 <div id="accueil">
     <!-- Intégration du Logo -->
     <div id="logo" style="background-color:white">
@@ -195,7 +195,6 @@
     <div class="wrapper1">
         <button id="carteBtn" type="button"  class="button1 ui-button ui-widget ui-corner-all">Carte</button><br/>
         <button id="mesCartesBtn" type="button"  class="button1 ui-button ui-widget ui-corner-all">Mes Cartes</button>
-        <button id="tableBtn" type="button"  class="button1 ui-button ui-widget ui-corner-all">Table</button>
     </div>
     <!--Fin création des boutons-->
 </div>
@@ -528,7 +527,7 @@
              <div id="map" class="map">
                  <button id="retour1" class="buttonRetour ui-button ui-widget ui-corner-all"><i class="fa fa-arrow-left fa-2x awesomeBtn"></i></button>
              </div>
-             <button id="download" class="buttonDownload ui-button ui-widget ui-corner-all"><i class="fa fa-download fa-2x awesomeBtnDownload"></i></button>
+             <button class="buttonDownload ui-button ui-widget ui-corner-all" data-toggle="modal" data-target="#carteModal"><i class="fa fa-download fa-2x awesomeBtnDownload"></i></button>
          </div>
      </div>
  </div>
@@ -538,24 +537,13 @@
 
 <!--Fin page carte-->
 
-<!--Page carte-->
+
+<!--Page table de mes cartes-->
 <div id="mesCartes" class="hidden">
     <button id="retour2" class="buttonRetour ui-button ui-widget ui-corner-all"><i class="fa fa-arrow-left fa-2x awesomeBtn"></i></button>
-</div>
-<!--Fin page carte-->
-
-<div id="mesCartesHorsligne" class="container-fluid">
-    <div class="row-fluid">
-        <div class="span12">
-            <div id="mapOffline" class="map">
-            </div>
-        </div>
+    <div style="text-align: center">
+        <button name="btnDrop" onclick="dropTable()">Vider la base de données</button>
     </div>
-</div>
-
-<!--Page carte-->
-<div id="table" class="hidden">
-    <button id="retour3" class="buttonRetour ui-button ui-widget ui-corner-all"><i class="fa fa-arrow-left fa-2x awesomeBtn"></i></button>
     <!--Création de la table-->
     <section id="no-more-tables">
         <div class="table">
@@ -569,12 +557,36 @@
             </table>
         </div>
     </section>
-    <div style="text-align: center">
-        <button name="btnDrop" onclick="dropTable()">Vider la base de données</button>
-    </div>
 </div>
 <!--Fin page carte-->
 
+ <!--Page table de l'affichage de la carte sélectionnée-->
+ <div id="mesCartesHorsligne" class="container-fluid">
+     <div id='mapOffline' class="row-fluid">
+     </div>
+     <button id="suppression" onclick="supprimerCarte()" class="ui-button ui-widget ui-corner-all">Supprimer carte</button>
+ </div>
+ <!--Fin page table de l'affichage de la carte sélectionnée-->
+
+<!--Modal pour le nom de la carte et l'espèce-->
+ <div class="modal fade" id="carteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" >
+     <div class="modal-dialog" role="document">
+         <div class="modal-content modal-content1">
+             <div class="modal-header">
+                 <h5 class="modal-title">Nom de la carte</h5>
+                 <div>
+                     <input id="nomCarte" type="text">
+                     <input id="nomEspece" type="text">
+                     <div class="modal-footer">
+                         <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                         <button id="#download" type="button" class="btn btn-primary" data-dismiss="modal">Enregistrer</button>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+<!--Fin modal-->
 
 
 
@@ -647,7 +659,7 @@
 <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
 
 
-<script src="lib/testOffline.js" type="text/javascript"></script>
+<script src="lib/gestionApplication.js" type="text/javascript"></script>
 <script src="lib/testOffline2.js" type="text/javascript"></script>
 <script src="lib/carteOffline.js" type="text/javascript"></script>
 

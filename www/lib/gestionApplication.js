@@ -1,22 +1,12 @@
 //Afficher la division Carte
 $('#carte').addClass('hidden');
 
+
 $("#carteBtn").click(function() {
     if (navigator.onLine === true) {
         $('#couche').removeClass('hidden');
         $('#carte').removeClass('hidden');
         $('#accueil').addClass('hidden');
-
-
-        // console.log(OSM.getSource());
-
-        // var source = map.getLayers().item(0).getSource();
-        // var tileUrlFunction = source.getTileUrlFunction();
-        // source.on('tileloadend', function (evt) {
-        //     console.log(tileUrlFunction(evt.tile.getTileCoord(), 1, ol.proj.get('EPSG:3857')));
-        // });
-    // });
-
     }
     else {
         alert("Vous n'avez pas d'accès internet")
@@ -27,7 +17,7 @@ $("#carteBtn").click(function() {
 //Afficher la division Mes Cartes
 $("#mesCartesBtn").click(function() {
     $('#mesCartes').removeClass('hidden');
-    $('#mesCartesHorsligne').removeClass('hidden');
+    //$('#mesCartesHorsligne').removeClass('hidden');
     $('#accueil').addClass('hidden');
 });
 
@@ -41,22 +31,9 @@ $("#retour1").click(function() {
 //Afficher la division Accueil
 $("#retour2").click(function() {
     $('#mesCartes').addClass('hidden');
-    $('#mesCartesHorsligne').addClass('hidden');
+   // $('#mesCartesHorsligne').addClass('hidden');
     $('#accueil').removeClass('hidden');
 });
-
-///POUR PROGRAMMATION
-//Afficher la division Mes Cartes
-$("#tableBtn").click(function() {
-    $('#table').removeClass('hidden');
-    $('#accueil').addClass('hidden');
-});
-//Afficher la division Accueil
-$("#retour3").click(function() {
-    $('#table').addClass('hidden');
-    $('#accueil').removeClass('hidden');
-});
-/////
 
 
 

@@ -1,3 +1,7 @@
+body{
+    background-color: ;
+}
+
 .wrapper1 {
     text-align: center;
     margin-top: 50%;
@@ -81,7 +85,7 @@
 }
 
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1024px) {
 
     /* Force table to not be like tables anymore */
     #no-more-tables table,
@@ -93,6 +97,10 @@
         display: block;
     }
 
+    #no-more-tables table {
+        border: transparent;
+    }
+
     /* Hide table headers (but not display: none;, for accessibility) */
     #no-more-tables thead tr {
         position: absolute;
@@ -100,12 +108,16 @@
         left: -9999px;
     }
 
-    #no-more-tables tr { border: 1px solid #ccc; }
+    #no-more-tables tr {
+        border: 2px solid #2b542c;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
 
     #no-more-tables td {
         /* Behave  like a "row" */
         border: none;
-        border-bottom: 1px solid #eee;
+       /* border-bottom: 1px solid #eee;*/
         position: relative;
         padding-left: 50%;
         white-space: normal;
@@ -116,7 +128,6 @@
         /* Now like a table header */
         position: absolute;
         /* Top/left values mimic padding */
-        top: 6px;
         left: 6px;
         width: 45%;
         padding-right: 10px;
@@ -129,4 +140,18 @@
     Label the data
     */
     #no-more-tables td:before { content: attr(data-title); }
+}
+
+
+.table-striped>tbody>tr:nth-of-type(odd){
+    background-color: #f16000;
+}
+
+.table-striped>tbody>tr:nth-of-type(even){
+    background-color: #f16000;
+}
+
+.suppCarte{
+    text-align: right !important;
+    margin-right: 2px;
 }
