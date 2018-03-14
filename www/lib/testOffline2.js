@@ -5,14 +5,14 @@ var pathCarte;
 
 
 $("#download").click(function() {
-
-
-
         map.once('postcompose', function(event) {
             var canvas = event.context.canvas;
             var quality = 1 ;// 0 to 1
             var folderpath = cordova.file.applicationStorageDirectory;
-            var filename = 'carte1.png';
+            var filename = $('#nomCarte').val()+'.png';
+            var nomCarte = $('#nomCarte').val();
+            var espece = $( "#selectEspece option:selected" ).text();
+
 
             canvas.toBlob(function(blob){
               //  console.log(blob.toDataURL())
@@ -24,7 +24,9 @@ $("#download").click(function() {
             centreCarte = map.getView().getCenter();
             pathCarte = folderpath + filename;
 
-            insertCarte(empriseCarte,zoomCarte,centreCarte,pathCarte);
+            insertCarte(empriseCarte,zoomCarte,centreCarte,pathCarte, nomCarte, espece);
+            $('#nomCarte').val('');
+            $( "#selectEspece" ).val('Bleuet sauvage');
 
         });
         map.renderSync();

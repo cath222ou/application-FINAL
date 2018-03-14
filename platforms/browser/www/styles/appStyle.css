@@ -1,6 +1,6 @@
-body{
+/*body{
     background-color: ;
-}
+}*/
 
 .wrapper1 {
     text-align: center;
@@ -154,4 +154,10 @@ body{
 .suppCarte{
     text-align: right !important;
     margin-right: 2px;
+}
+
+.boutonModal{
+    background: #016B3B;
+    border-color: #2b542c;
+    color: white;
 }

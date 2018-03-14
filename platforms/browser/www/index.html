@@ -561,8 +561,9 @@
 <!--Fin page carte-->
 
  <!--Page table de l'affichage de la carte sélectionnée-->
- <div id="mesCartesHorsligne" class="container-fluid">
+ <div id="mesCartesHorsligne" class="container-fluid hidden">
      <div id='mapOffline' class="row-fluid">
+         <button id="retour3" class="buttonRetour ui-button ui-widget ui-corner-all"><i class="fa fa-arrow-left fa-2x awesomeBtn"></i></button>
      </div>
      <button id="suppression" onclick="supprimerCarte()" class="ui-button ui-widget ui-corner-all">Supprimer carte</button>
  </div>
@@ -573,13 +574,23 @@
      <div class="modal-dialog" role="document">
          <div class="modal-content modal-content1">
              <div class="modal-header">
-                 <h5 class="modal-title">Nom de la carte</h5>
+                 <h3 class="modal-title">Enregistrement de la carte</h3>
                  <div>
-                     <input id="nomCarte" type="text">
-                     <input id="nomEspece" type="text">
+                     <h5>Titre de la carte: </h5>
+                     <input id="nomCarte" class="form-control form-control-lg" type="text" placeholder="">
+                     <h5>Espèce: </h5>
+                     <select id="selectEspece" class="form-control form-control-lg">
+                         <option>Bleuet sauvage</option>
+                         <option>Chanterelle tube</option>
+                         <option>Pied mouton</option>
+                         <option>Chanterelle commune</option>
+                         <option>Hydne ombiliquée</option>
+                         <option>Matsutake</option>
+                         <option>Autre</option>
+                     </select>
                      <div class="modal-footer">
-                         <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-                         <button id="#download" type="button" class="btn btn-primary" data-dismiss="modal">Enregistrer</button>
+                         <button type="button" class="btn btn-default boutonModal" data-dismiss="modal">Annuler</button>
+                         <button id="download" type="button" class="btn btn-primary boutonModal" data-dismiss="modal">Enregistrer</button>
                      </div>
                  </div>
              </div>

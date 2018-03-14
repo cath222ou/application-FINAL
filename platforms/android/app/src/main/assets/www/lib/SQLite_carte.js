@@ -72,14 +72,12 @@ function ouvrirCarte(value){
 }
 
 
-function insertCarte(empriseCarte,zoomCarte,centreCarte,pathCarte){
+function insertCarte(empriseCarte,zoomCarte,centreCarte,pathCarte,nomCarte, espece){
 
     var taille = 'a';
-    var nom = 'a';
-    var espece = 'a';
     db = window.openDatabase("Database", "1.0", "Cordova Demo", 200000);
     db.transaction(function(tx){
-        tx.executeSql('INSERT OR REPLACE INTO carteHorsLigne (extent_c1,extent_c2,extent_c3,extent_c4, zoom_c, centre_c1, centre_c2, path_c, taille_c, nom_c, espece_c) VALUES ("'+empriseCarte[0]+'","'+empriseCarte[1]+'","'+empriseCarte[2]+'","'+empriseCarte[3]+'","'+zoomCarte+'","'+centreCarte[0]+'","'+centreCarte[1]+'","'+pathCarte+'","'+taille+'","'+nom+'","'+espece+'")',[],getCarteNonSync()); }
+        tx.executeSql('INSERT OR REPLACE INTO carteHorsLigne (extent_c1,extent_c2,extent_c3,extent_c4, zoom_c, centre_c1, centre_c2, path_c, taille_c, nom_c, espece_c) VALUES ("'+empriseCarte[0]+'","'+empriseCarte[1]+'","'+empriseCarte[2]+'","'+empriseCarte[3]+'","'+zoomCarte+'","'+centreCarte[0]+'","'+centreCarte[1]+'","'+pathCarte+'","'+taille+'","'+nomCarte+'","'+espece+'")',[],getCarteNonSync()); }
     ,function(error){alert(error.message)});
 }
 

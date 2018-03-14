@@ -2,6 +2,7 @@
 $('#carte').addClass('hidden');
 
 
+
 $("#carteBtn").click(function() {
     if (navigator.onLine === true) {
         $('#couche').removeClass('hidden');
@@ -34,6 +35,25 @@ $("#retour2").click(function() {
    // $('#mesCartesHorsligne').addClass('hidden');
     $('#accueil').removeClass('hidden');
 });
+
+
+//Affichier la division Accueil
+$("#retour3").click(function() {
+    //$('#mesCartesHorsligne').addClass('hidden');
+    $('#accueil').removeClass('hidden');
+});
+
+
+$("#ouvrirBtn").click(function() {
+    $('#mesCartes').addClass('hidden');
+});
+
+//Pour la sélection de l'espèce dans le modal
+//$(function() {
+  //  $("#nomEspece").selectmenu();
+//});
+
+
 
 
 
