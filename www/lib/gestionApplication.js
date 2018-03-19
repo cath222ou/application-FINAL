@@ -2,7 +2,6 @@
 $('#carte').addClass('hidden');
 
 
-
 $("#carteBtn").click(function() {
     if (navigator.onLine === true) {
         $('#couche').removeClass('hidden');
@@ -14,11 +13,9 @@ $("#carteBtn").click(function() {
     }
 });
 
-
 //Afficher la division Mes Cartes
 $("#mesCartesBtn").click(function() {
     $('#mesCartes').removeClass('hidden');
-    //$('#mesCartesHorsligne').removeClass('hidden');
     $('#accueil').addClass('hidden');
 });
 
@@ -37,21 +34,23 @@ $("#retour2").click(function() {
 });
 
 
-//Affichier la division Accueil
+//Affichier la division mesCartes
 $("#retour3").click(function() {
-    //$('#mesCartesHorsligne').addClass('hidden');
-    $('#accueil').removeClass('hidden');
+    $('#mesCartesHorsligne').addClass('hidden');
+    $('#mesCartes').removeClass('hidden');
+});
+
+$("#barreRecheche").click(function() {
+    $('#rechercheLocalisation').removeClass('hidden');
+    $('#boutons').addClass('hidden');
+});
+
+$("#finRecherche").click(function() {
+    $('#rechercheLocalisation').addClass('hidden');
+    $('#boutons').removeClass('hidden');
 });
 
 
-$("#ouvrirBtn").click(function() {
-    $('#mesCartes').addClass('hidden');
-});
-
-//Pour la sélection de l'espèce dans le modal
-//$(function() {
-  //  $("#nomEspece").selectmenu();
-//});
 
 
 

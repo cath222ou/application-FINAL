@@ -15,8 +15,8 @@
 	#foot {  width:250px; }
 	#gSignInWrapper{display:none;}
 	.search-bar .pull-left { margin-left: 100px; top: 2px; position:fixed;}
-	.search-bar .navbar-form {  padding: 0px 0px;  margin-top: 5px; margin-right:auto; width:80%}
-	#adress{  width: 100%;  height: 34px;}
+	.search-bar .navbar-form {margin-top: 0px; margin-left:1px; width:80%}
+	#adress{  width: 100%;  height: 34px; margin-top:5px; margin-left: 2px;}
 	/* #geocodage{  width: 60%;  height: 34px;} */
 	.input-group-btn .btn-default {  width: 40px;}
 	

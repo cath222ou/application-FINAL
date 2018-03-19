@@ -1,7 +1,6 @@
-
-
 // Wait for Cordova to load
-document.addEventListener("deviceready", onDeviceReady, false);
+    document.addEventListener("deviceready", onDeviceReady, false);
+
 
 //Cordova ready
 function onDeviceReady() {
@@ -43,11 +42,12 @@ function afficherTableConstats(tx, results) {
     for (var i = 0; i < len; i++) {
         table01.append(
             '<tr>'
-            + '<td class="suppCarte"><button id="retour1" class="buttonRetour ui-button ui-widget ui-corner-all"><i class="fa fa-trash fa-2x awesomeBtn"></i></button></td>'
+            + '<td class="suppCarte"><button id="retour1" data-toggle="modal" data-target="#deleteModal" data-id="'+results.rows.item(i).carte_id+'" data-name="'+results.rows.item(i).nom_c+'" data-path="'+results.rows.item(i).path_c+'" class="buttonRetour ui-button ui-widget ui-corner-all"><i class="fa fa-trash fa-2x awesomeBtn"></i></button></td>'
             + '<td data-title="carte_id" data-desc="carte_id">'+results.rows.item(i).carte_id +'</td>'
             + '<td data-title="extent" data-desc="extent_c">'+results.rows.item(i).extent_c1 +'</td>'
             + '<td data-title="zoom" data-desc="zoom_c">'+results.rows.item(i).zoom_c +'</td>'
-            + '<td data-title="centre" data-desc="centre_c">'+results.rows.item(i).centre_c +'</td>'
+            + '<td data-title="centre1" data-desc="centre_c1">'+results.rows.item(i).centre_c1 +'</td>'
+            + '<td data-title="centre2" data-desc="centre_c2">'+results.rows.item(i).centre_c2 +'</td>'
             + '<td data-title="path" data-desc="path_c">'+results.rows.item(i).path_c +'</td>'
             + '<td data-title="taille" data-desc="taille_c">'+results.rows.item(i).taille_c +'</td>'
             + '<td data-title="nom" data-desc="nom_c">'+results.rows.item(i).nom_c +'</td>'
@@ -67,13 +67,17 @@ function ouvrirCarte(value){
     centre1 = value.getAttribute('data-centre1');
     centre2 = value.getAttribute('data-centre2');
     path = value.getAttribute('data-path');
-
+    //Gestion des pages (passer de mesCartes à mesCartesHorsLigne)
+    $('#mesCartes').addClass('hidden');
+    $('#mesCartesHorsligne').removeClass('hidden');
+    //Lancer l'initialisation de la carte
     initializeMap(extent1,extent2,extent3,extent4, zoom, centre1, centre2, path)
 }
 
 
 function insertCarte(empriseCarte,zoomCarte,centreCarte,pathCarte,nomCarte, espece){
-
+    //a enleverr !!!
+    //pathCarte='image/map_2.png';
     var taille = 'a';
     db = window.openDatabase("Database", "1.0", "Cordova Demo", 200000);
     db.transaction(function(tx){
@@ -89,4 +93,44 @@ function dropTable (){
         tx.executeSql('DROP TABLE IF EXISTS carteHorsLigne', [], onDeviceReady());
 
     }, errorCB);
+}
+
+$('#deleteModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget); // Button that triggered the modal
+    var nomCarte = button.data('name'); // Extract info from data-* attributes
+    $('#idCache').text(button.data('id'));
+    $('#pathCache').text(button.data('path'));
+    var modal = $(this);
+    modal.find('.modal-title').text('Supression de la carte: ' + nomCarte);
+    modal.find('.modal-body h5').text('La carte '+nomCarte+' sera définitivement supprimée de votre appareil mobile. Veuillez confirmer la suppression.');
+});
+
+
+//Pour supprimer les cartes hors ligne dans la mémoire interne du mobile
+function supprimerCarte(){
+    var idValue = $('#idCache').text();
+    var pathValue = $('#pathCache').text();
+    var path = pathValue.substr(0, pathValue.lastIndexOf("/")+1);
+    var fileName = pathValue.substring(pathValue.lastIndexOf("/") + 1, pathValue.length);
+
+    //path = 'file:///data/user/0/com.adobe.phonegap.app/';
+    //filename = 'carte1.png';
+
+    //Supprimer l'image sur l'appareil mobile
+    window.resolveLocalFileSystemURL(path, function(dir) {
+        dir.getFile(fileName, {create:false}, function(fileEntry) {
+           fileEntry.remove(function(){
+                alert('fichier supprimé');
+               //Supprimer l'enregistrement correspondante dans la table
+               db = window.openDatabase("Database", "1.0", "Cordova Demo", 200000);
+               db.transaction(function(tx){
+                       tx.executeSql('DELETE FROM carteHorsLigne WHERE carte_id='+idValue,[],getCarteNonSync()); }
+                   ,function(error){alert(error.message)});
+            },function(error){
+                alert('Erreur de supression')
+            },function(){
+                alert('le fichier nexiste pas')
+            });
+        });
+    });
 }

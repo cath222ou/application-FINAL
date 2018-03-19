@@ -3,33 +3,77 @@ var zoomCarte;
 var centreCarte;
 var pathCarte;
 
+// Pour la gestion de l'ajout ou non du champ texte pour un nom d'espèce AUTTRE
+$( "#selectEspece" ).on("change", function(){
+    if ($("#selectEspece option:selected").text()=== 'Autre') {
+        $('#autreEspece').removeClass('hidden');
+    }
+    else {
+        $('#autreEspece').addClass('hidden');
+    }
+});
 
+//Enregistrement de la carte et de l'insertion des informations dans la table
 $("#download").click(function() {
-        map.once('postcompose', function(event) {
+
+
+    if ($('#nomCarte').val()=== ''){
+        $('#validation').removeClass('hidden');
+        $('#nomCarte').addClass('invalid');
+    }
+    else {
+        $('#validation').addClass('hidden');
+        $('#nomCarte').removeClass('invalid');
+
+        //Remplace le nom de la carte pour s'assurer qu'il n'y a pas d'espace ou de caractères spéciaux
+        //Les espaces sont remplacés par des _
+        var regExpr = /[^a-zA-Z0-9-_]/g;
+        var userText = $('#nomCarte').val();
+        var nomSansEspace = userText.replace(regExpr, "");
+        nomSansEspace = nomSansEspace.split(' ').join('_');
+
+        //Enregistrement de la carte à son état actuel
+        map.once('postcompose', function (event) {
             var canvas = event.context.canvas;
-            var quality = 1 ;// 0 to 1
+            var quality = 1;// 0 to 1
             var folderpath = cordova.file.applicationStorageDirectory;
-            var filename = $('#nomCarte').val()+'.png';
+            var filename = nomSansEspace + '.png';
             var nomCarte = $('#nomCarte').val();
-            var espece = $( "#selectEspece option:selected" ).text();
+            var espece = '';
 
-
-            canvas.toBlob(function(blob){
-              //  console.log(blob.toDataURL())
-                savebase64AsImageFile(folderpath,filename,blob);
-              }, 'image/png', quality);
+            //Enregistrer la carte comme image PNG
+            canvas.toBlob(function (blob) {
+                savebase64AsImageFile(folderpath, filename, blob);
+            }, 'image/png', quality);
 
             empriseCarte = map.getView().calculateExtent(map.getSize());
             zoomCarte = map.getView().getZoom();
             centreCarte = map.getView().getCenter();
             pathCarte = folderpath + filename;
 
-            insertCarte(empriseCarte,zoomCarte,centreCarte,pathCarte, nomCarte, espece);
+            if ($("#selectEspece option:selected").text() === 'Autre') {
+                espece = $('#nomAutreEspece').val();
+            }
+            else {
+                espece = $("#selectEspece option:selected").text();
+            }
+            //Lancer la fonction d'insertion dans la table
+            insertCarte(empriseCarte, zoomCarte, centreCarte, pathCarte, nomCarte, espece);
+
+            //Vider le champs text du nom de la carte
             $('#nomCarte').val('');
-            $( "#selectEspece" ).val('Bleuet sauvage');
+            //Remettre la valeur Bleuet Sauvage comme valeur par défaut du select menu
+            $("#selectEspece").val('Bleuet sauvage');
+            //Remettre le champs texte du nom de l'Espèce caché et vide
+            $('#autreEspece').addClass('hidden');
+            $('#nomAutreEspece').val('');
+
+            //Fermer le modal
+            $('#carteModal').modal('hide');
 
         });
         map.renderSync();
+    }
 });
 
 
@@ -64,20 +108,3 @@ function savebase64AsImageFile(folderpath,filename,DataBlob){
     })
 }
 
-
-//Pour supprimer les cartes hors ligne dans la mémoire interne du mobile
-function supprimerCarte(){
-    path = 'file:///data/user/0/com.adobe.phonegap.app/';
-    filename = 'carte1.png';
-    window.resolveLocalFileSystemURL(path, function(dir) {
-        dir.getFile(filename, {create:false}, function(fileEntry) {
-            fileEntry.remove(function(){
-                alert('fichier supprimé')
-            },function(error){
-                alert('Erreur de supression')
-            },function(){
-                alert('le fichier nexiste pas')
-            });
-        });
-    });
-}
