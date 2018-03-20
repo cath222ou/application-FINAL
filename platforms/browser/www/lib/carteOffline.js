@@ -1,5 +1,5 @@
 var mapOffline;
-var pointCoord;
+var trackFeature;
 function initializeMap(extent1,extent2,extent3,extent4, zoom, centre1, centre2, path){
     $("#mapOffline").empty();
 
@@ -20,7 +20,7 @@ function initializeMap(extent1,extent2,extent3,extent4, zoom, centre1, centre2, 
 
         pointCoord = new ol.geom.Point([]);
 
-        var trackFeature = new ol.Feature({
+        trackFeature = new ol.Feature({
             geometry: pointCoord
         });
 

@@ -13,7 +13,7 @@ function geolocationSuccess(position) {
 
     var coord = ol.proj.transform([lon, lat], 'EPSG:4326', 'EPSG:3857');
 
-    pointCoord.setCoordinates([coord[0],coord[1]])
+    trackFeature.getGeometry().setCoordinates([coord[0],coord[1]])
 }
 
 function onError(error) {
