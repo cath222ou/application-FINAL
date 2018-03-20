@@ -1,5 +1,9 @@
 var mapOffline;
 var trackFeature;
+var trackLayer;
+var sourceVector;
+var pointCoord;
+
 function initializeMap(extent1,extent2,extent3,extent4, zoom, centre1, centre2, path){
     $("#mapOffline").empty();
 
@@ -39,11 +43,13 @@ function initializeMap(extent1,extent2,extent3,extent4, zoom, centre1, centre2, 
         });
         trackFeature.setStyle(styleMarker);
 
+        sourceVector =  new ol.source.Vector({
+            features: [trackFeature]
+        })
+
         //view.setCenter(ol.proj.transform([lon, lat], 'EPSG:4326', 'EPSG:3857'));
-        var trackLayer = new ol.layer.Vector({
-            source: new ol.source.Vector({
-                features: [trackFeature]
-            }),
+        trackLayer = new ol.layer.Vector({
+            source: sourceVector,
             visible: true,
         });
 
