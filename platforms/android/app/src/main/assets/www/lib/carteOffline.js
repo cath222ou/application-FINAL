@@ -1,5 +1,5 @@
 var mapOffline;
-var couche;
+var pointCoord;
 function initializeMap(extent1,extent2,extent3,extent4, zoom, centre1, centre2, path){
     $("#mapOffline").empty();
 
@@ -17,10 +17,41 @@ function initializeMap(extent1,extent2,extent3,extent4, zoom, centre1, centre2, 
     });
 ///////////////////////
 
+
+        pointCoord = new ol.geom.Point([]);
+
+        var trackFeature = new ol.Feature({
+            geometry: pointCoord
+        });
+
+        var styleMarker = new ol.style.Style({
+            image: new ol.style.Circle({
+                radius: 6,
+                snapToPixel: false,
+                fill: new ol.style.Fill({
+                    color: '#3399CC'
+                }),
+                stroke: new ol.style.Stroke({
+                    color: '#fff',
+                    width: 2
+                })
+            })
+        });
+        trackFeature.setStyle(styleMarker);
+
+        //view.setCenter(ol.proj.transform([lon, lat], 'EPSG:4326', 'EPSG:3857'));
+        var trackLayer = new ol.layer.Vector({
+            source: new ol.source.Vector({
+                features: [trackFeature]
+            }),
+            visible: true,
+        });
+
+
 //////////////////////////////
 
     mapOffline = new ol.Map({
-        layers: [imageCarte],
+        layers: [imageCarte, trackLayer],
         target: 'mapOffline',
         view: new ol.View({
             projection: 'EPSG:3857',
