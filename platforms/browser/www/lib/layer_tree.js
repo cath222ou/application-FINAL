@@ -32,25 +32,25 @@ map.getLayers().forEach(function(layer, i) {
 });
 
 
-jQuery(document).ready(function () {
-    $('input.visible').each(function(){
-        if ($(this).is(':checked')) {
-           var parentId2 = $(this).closest('li').prop('id');
-			$( "#"+parentId2+" .layer" ).css({"display":"block"})  
-        }
-    });
-});
+//jQuery(document).ready(function () {
+//  $('input.visible').each(function(){
+//      if ($(this).is(':checked')) {
+//         var parentId2 = $(this).closest('li').prop('id');
+//			$( "#"+parentId2+" .layer" ).css({"display":"block"})
+//      }
+//  });
+//});
 
 
-$(document).ready(function() {
-
-	$("input[type=checkbox]").change(function() {
-		var parentId = $(this).closest('li').prop('id');
-		if ($(this).is(':checked')) {
-			$( "#"+parentId+" .layer" ).css({"display":"block"})
-		  } 
-		else {
-			$( "#"+parentId+" .layer" ).css({"display":"none"})
-		  }
-	});
-})
+//$(document).ready(function() {
+//
+//	$("input[type=checkbox]").change(function() {
+//		var parentId = $(this).closest('li').prop('id');
+//		if ($(this).is(':checked')) {
+//			$( "#"+parentId+" .layer" ).css({"display":"block"})
+//		  }
+//		else {
+//			$( "#"+parentId+" .layer" ).css({"display":"none"})
+//		  }
+//	});
+//})

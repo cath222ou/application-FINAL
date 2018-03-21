@@ -123,6 +123,257 @@
 		
 	var Groupe_IQH2 = new ol.layer.Group({layers: [iqh2_20,iqh2_50,iqh2_250,iqh2_WMS], name: 'iqh2'});
 	Groupe_IQH2.setVisible(false);
+
+
+//CHANTERELLE TUBE///////////////////////
+/** Définition des couches PFNL (overlay)  - Exemple de 2 groupes IQH sur plusieurs échelles : Groupe_IQH1 et Groupe_IQH2 **/
+var iqh3_20 = new ol.layer.Vector({
+    source: new ol.source.GeoJSON({
+        url: "http://igeomedia.com/~odupras/data/iqh/iqh3/grille20/iqh3.geojson",
+        projection: 'EPSG:3857'
+    }),
+    title:"IQH Grille 20",
+    minResolution: 100,
+    maxResolution: 1000,
+    style: setGridFeatureStyle
+});
+iqh3_20.setVisible(true);
+
+var iqh3_50 = new ol.layer.Vector({
+    source: new ol.source.GeoJSON({
+        url: "http://igeomedia.com/~odupras/data/iqh/iqh3/grille50/iqh3.geojson",
+        projection: 'EPSG:3857'
+    }),
+    title:"IQH Grille 50",
+    minResolution: 1000,
+    maxResolution: 2000,
+    style: setGridFeatureStyle
+});
+iqh3_50.setVisible(true);
+
+var iqh3_250 = new ol.layer.Vector({
+    source: new ol.source.GeoJSON({
+        url: "http://igeomedia.com/~odupras/data/iqh/iqh3/grille250/iqh3.geojson",
+        projection: 'EPSG:3857'
+    }),
+    title:"IQH Grille 250",
+    minResolution: 2000,
+    style: setGridFeatureStyle
+});
+iqh3_250.setVisible(true);
+
+var iqh3_WMS = new ol.layer.Tile({source: new ol.source.TileWMS({
+        url: 'http://igeomedia.com/cgi-bin/mapserv?map=/home/odupras/public_html/data/iqh.map&',
+        params: {LAYERS: 'iqh3', VERSION: '1.1.1'}
+    }),
+    maxResolution: 200,
+});
+iqh3_WMS.setVisible(true);
+
+var Groupe_IQH3 = new ol.layer.Group({layers: [iqh3_20,iqh3_50,iqh3_250,iqh3_WMS], name: 'iqh3'});
+Groupe_IQH3.setVisible(false);
+
+//FIN CHANTERELLE TUBE
+
+//PIED-DE-MOUTON///////////////////////
+/** Définition des couches PFNL (overlay)  - Exemple de 2 groupes IQH sur plusieurs échelles : Groupe_IQH1 et Groupe_IQH2 **/
+var iqh4_20 = new ol.layer.Vector({
+    source: new ol.source.GeoJSON({
+        url: "http://igeomedia.com/~odupras/data/iqh/iqh5/grille20/iqh5.geojson",
+        projection: 'EPSG:3857'
+    }),
+    title:"IQH Grille 20",
+    minResolution: 100,
+    maxResolution: 1000,
+    style: setGridFeatureStyle
+});
+iqh3_20.setVisible(true);
+
+var iqh4_50 = new ol.layer.Vector({
+    source: new ol.source.GeoJSON({
+        url: "http://igeomedia.com/~odupras/data/iqh/iqh5/grille50/iqh5.geojson",
+        projection: 'EPSG:3857'
+    }),
+    title:"IQH Grille 50",
+    minResolution: 1000,
+    maxResolution: 2000,
+    style: setGridFeatureStyle
+});
+iqh3_50.setVisible(true);
+
+var iqh4_250 = new ol.layer.Vector({
+    source: new ol.source.GeoJSON({
+        url: "http://igeomedia.com/~odupras/data/iqh/iqh5/grille250/iqh5.geojson",
+        projection: 'EPSG:3857'
+    }),
+    title:"IQH Grille 250",
+    minResolution: 2000,
+    style: setGridFeatureStyle
+});
+iqh3_250.setVisible(true);
+
+var iqh4_WMS = new ol.layer.Tile({source: new ol.source.TileWMS({
+        url: 'http://igeomedia.com/cgi-bin/mapserv?map=/home/odupras/public_html/data/iqh.map&',
+        params: {LAYERS: 'iqh5', VERSION: '1.1.1'}
+    }),
+    maxResolution: 200,
+});
+iqh3_WMS.setVisible(true);
+
+var Groupe_IQH4 = new ol.layer.Group({layers: [iqh4_20,iqh4_50,iqh4_250,iqh4_WMS], name: 'iqh4'});
+Groupe_IQH3.setVisible(false);
+
+//FIN PIED-DE-MOUTON
+
+//CHANTERELLE COMMUNE///////////////////////
+/** Définition des couches PFNL (overlay)  - Exemple de 2 groupes IQH sur plusieurs échelles : Groupe_IQH1 et Groupe_IQH2 **/
+var iqh5_20 = new ol.layer.Vector({
+    source: new ol.source.GeoJSON({
+        url: "http://igeomedia.com/~odupras/data/iqh/iqh6/grille20/iqh6.geojson",
+        projection: 'EPSG:3857'
+    }),
+    title:"IQH Grille 20",
+    minResolution: 100,
+    maxResolution: 1000,
+    style: setGridFeatureStyle
+});
+iqh3_20.setVisible(true);
+
+var iqh5_50 = new ol.layer.Vector({
+    source: new ol.source.GeoJSON({
+        url: "http://igeomedia.com/~odupras/data/iqh/iqh6/grille50/iqh6.geojson",
+        projection: 'EPSG:3857'
+    }),
+    title:"IQH Grille 50",
+    minResolution: 1000,
+    maxResolution: 2000,
+    style: setGridFeatureStyle
+});
+iqh3_50.setVisible(true);
+
+var iqh5_250 = new ol.layer.Vector({
+    source: new ol.source.GeoJSON({
+        url: "http://igeomedia.com/~odupras/data/iqh/iqh6/grille250/iqh6.geojson",
+        projection: 'EPSG:3857'
+    }),
+    title:"IQH Grille 250",
+    minResolution: 2000,
+    style: setGridFeatureStyle
+});
+iqh3_250.setVisible(true);
+
+var iqh5_WMS = new ol.layer.Tile({source: new ol.source.TileWMS({
+        url: 'http://igeomedia.com/cgi-bin/mapserv?map=/home/odupras/public_html/data/iqh.map&',
+        params: {LAYERS: 'iqh6', VERSION: '1.1.1'}
+    }),
+    maxResolution: 200,
+});
+iqh3_WMS.setVisible(true);
+
+var Groupe_IQH5 = new ol.layer.Group({layers: [iqh5_20,iqh5_50,iqh5_250,iqh5_WMS], name: 'iqh5'});
+Groupe_IQH3.setVisible(false);
+
+//FIN CHANTERELLE COMMUNE
+
+//HYDNE OMBILIQUÉ///////////////////////
+/** Définition des couches PFNL (overlay)  - Exemple de 2 groupes IQH sur plusieurs échelles : Groupe_IQH1 et Groupe_IQH2 **/
+var iqh6_20 = new ol.layer.Vector({
+    source: new ol.source.GeoJSON({
+        url: "http://igeomedia.com/~odupras/data/iqh/iqh8/grille20/iqh8.geojson",
+        projection: 'EPSG:3857'
+    }),
+    title:"IQH Grille 20",
+    minResolution: 100,
+    maxResolution: 1000,
+    style: setGridFeatureStyle
+});
+iqh3_20.setVisible(true);
+
+var iqh6_50 = new ol.layer.Vector({
+    source: new ol.source.GeoJSON({
+        url: "http://igeomedia.com/~odupras/data/iqh/iqh8/grille50/iqh8.geojson",
+        projection: 'EPSG:3857'
+    }),
+    title:"IQH Grille 50",
+    minResolution: 1000,
+    maxResolution: 2000,
+    style: setGridFeatureStyle
+});
+iqh3_50.setVisible(true);
+
+var iqh6_250 = new ol.layer.Vector({
+    source: new ol.source.GeoJSON({
+        url: "http://igeomedia.com/~odupras/data/iqh/iqh8/grille250/iqh8.geojson",
+        projection: 'EPSG:3857'
+    }),
+    title:"IQH Grille 250",
+    minResolution: 2000,
+    style: setGridFeatureStyle
+});
+iqh3_250.setVisible(true);
+
+var iqh6_WMS = new ol.layer.Tile({source: new ol.source.TileWMS({
+        url: 'http://igeomedia.com/cgi-bin/mapserv?map=/home/odupras/public_html/data/iqh.map&',
+        params: {LAYERS: 'iqh8', VERSION: '1.1.1'}
+    }),
+    maxResolution: 200,
+});
+iqh3_WMS.setVisible(true);
+
+var Groupe_IQH6 = new ol.layer.Group({layers: [iqh6_20,iqh6_50,iqh6_250,iqh6_WMS], name: 'iqh6'});
+Groupe_IQH3.setVisible(false);
+
+//FIN HYDNE OMBILIQUÉ
+
+//MATSUTAKE///////////////////////
+/** Définition des couches PFNL (overlay)  - Exemple de 2 groupes IQH sur plusieurs échelles : Groupe_IQH1 et Groupe_IQH2 **/
+var iqh7_20 = new ol.layer.Vector({
+    source: new ol.source.GeoJSON({
+        url: "http://igeomedia.com/~odupras/data/iqh/iqh12/grille20/iqh12.geojson",
+        projection: 'EPSG:3857'
+    }),
+    title:"IQH Grille 20",
+    minResolution: 100,
+    maxResolution: 1000,
+    style: setGridFeatureStyle
+});
+iqh3_20.setVisible(true);
+
+var iqh7_50 = new ol.layer.Vector({
+    source: new ol.source.GeoJSON({
+        url: "http://igeomedia.com/~odupras/data/iqh/iqh12/grille50/iqh12.geojson",
+        projection: 'EPSG:3857'
+    }),
+    title:"IQH Grille 50",
+    minResolution: 1000,
+    maxResolution: 2000,
+    style: setGridFeatureStyle
+});
+iqh3_50.setVisible(true);
+
+var iqh7_250 = new ol.layer.Vector({
+    source: new ol.source.GeoJSON({
+        url: "http://igeomedia.com/~odupras/data/iqh/iqh12/grille250/iqh12.geojson",
+        projection: 'EPSG:3857'
+    }),
+    title:"IQH Grille 250",
+    minResolution: 2000,
+    style: setGridFeatureStyle
+});
+iqh3_250.setVisible(true);
+
+var iqh7_WMS = new ol.layer.Tile({source: new ol.source.TileWMS({
+        url: 'http://igeomedia.com/cgi-bin/mapserv?map=/home/odupras/public_html/data/iqh.map&',
+        params: {LAYERS: 'iqh12', VERSION: '1.1.1'}
+    }),
+    maxResolution: 200,
+});
+iqh3_WMS.setVisible(true);
+
+var Groupe_IQH7 = new ol.layer.Group({layers: [iqh7_20,iqh7_50,iqh7_250,iqh7_WMS], name: 'iqh7'});
+Groupe_IQH3.setVisible(false);
+
+//FIN MATSUTAKE
 	
 
 
@@ -178,7 +429,7 @@
 	var map = new ol.Map({
 		target: 'map',
 		renderer: 'canvas',
-		layers: [Groupe_OpenData,Groupe_Basemap, Groupe_IQH1, Groupe_IQH2,Groupe_Meteo, Groupe_Topo],
+		layers: [Groupe_OpenData,Groupe_Basemap, Groupe_IQH1, Groupe_IQH2,Groupe_IQH3,Groupe_IQH4,Groupe_IQH5,Groupe_IQH6,Groupe_IQH7,Groupe_Meteo, Groupe_Topo],
 		view: view,
 		controls: ol.control.defaults().extend([
 			// new ol.control.FullScreen(),

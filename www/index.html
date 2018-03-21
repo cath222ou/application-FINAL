@@ -280,7 +280,7 @@
                     <i class="fa fa-th-list"></i>
                     <span class="">PFNL | Bleuet Sauvage</span>
                 </a>
-                <div id="catalog" class=" collapse" aria-expanded="false" style="height: 0px;"> <!-- ngIf: !globals.offline -->
+                <div id="catalog3" class=" collapse" aria-expanded="false" style="height: 0px;"> <!-- ngIf: !globals.offline -->
 
                     <!-- Groupe Couche iqh1-->
                     <!--IQH1 des bleuets-->
@@ -330,7 +330,6 @@
                             <fieldset class="layer">
                                 <div class="col-md-4">Opacité</div>
                                 <input class="opacity col-md-8" type="range" min="0" max="1" step="0.01"/>
-
                             </fieldset>
                         </li>
                     </ul>
@@ -341,32 +340,32 @@
             <div class="panel"> <!-- Sélection des couches -->
 
                 <!-- Définitions du menu -->
-                <a id="catalogHeading" class="panel-heading accordion-toggle collapsed tetePanel" data-toggle="collapse" data-parent="#pulldown-content" href="#catalog"  aria-expanded="false">
+                <a id="catalogHeading" class="panel-heading accordion-toggle collapsed tetePanel" data-toggle="collapse" data-parent="#pulldown-content" href="#catalog4"  aria-expanded="false">
                     <i class="visible-collapsed icon-sort-right"></i>
                     <i class="hidden-collapsed fa fa-sort-desc"></i>
                     <i class="fa fa-th-list"></i>
                     <span class="">PFNL | Champignon forestier</span>
                 </a>
-                <div id="catalog" class=" collapse" aria-expanded="false" style="height: 0px;"> <!-- ngIf: !globals.offline -->
+                <div id="catalog4" class=" collapse" aria-expanded="false" style="height: 0px;"> <!-- ngIf: !globals.offline -->
 
-                    <!-- Groupe Couche iqh1-->
-                    <!--IQH1 des bleuets-->
+                    <!-- Groupe Couche iqh3-->
+                    <!--IQH1 de la chanterelle tube-->
                     <ul class="group">
-                        <a id="couchedefond" class="panel-heading accordion-toggle collapsed" data-toggle="collapse"  href="#IQH1"  aria-expanded="false">
+                        <a id="couchedefond" class="panel-heading accordion-toggle collapsed" data-toggle="collapse"  href="#IQH3"  aria-expanded="false">
                             <i class="visible-collapsed fa fa-plus-square-o"></i>
                             <i class="hidden-collapsed fa fa-minus-square-o"></i>
                         </a>
-                        <li id="layer2" >
-                            <label class="checkbox" for="visible2">
-                                <input id="visible2" class="visible" type="checkbox"/>Bleuet 1
+                        <li id="layer4" >
+                            <label class="checkbox" for="visible4">
+                                <input id="visible4" class="visible" type="checkbox"/>Chanterelle tube
                             </label>
                         </li>
                     </ul>
 
-                    <ul id="IQH1" class="layertree collapse">
-                        <li id="layer23" class="sousMenu">
-                            <label class="checkbox" for="visible23">
-                                <input id="visible23" class="visible" type="checkbox"/>IQH WMS
+                    <ul id="IQH3" class="layertree collapse">
+                        <li id="layer43" class="sousMenu">
+                            <label class="checkbox" for="visible43">
+                                <input id="visible43" class="visible" type="checkbox"/>IQH WMS
                             </label>
                             <fieldset class="layer">
                                 <div class="col-md-4">Opacité</div>
@@ -375,24 +374,102 @@
                             </fieldset>
                         </li>
                     </ul>
-
-                    <!--IQH2 des bleuets-->
+                    <!-- Groupe Couche iqh4-->
+                    <!--IQH1 de la Pied mouton-->
                     <ul class="group">
-                        <a id="couchedefond2" class="panel-heading accordion-toggle collapsed" data-toggle="collapse"  href="#IQH2"  aria-expanded="false">
+                        <a id="couchedefond" class="panel-heading accordion-toggle collapsed" data-toggle="collapse"  href="#IQH4"  aria-expanded="false">
                             <i class="visible-collapsed fa fa-plus-square-o"></i>
                             <i class="hidden-collapsed fa fa-minus-square-o"></i>
                         </a>
-                        <li id="layer3" >
-                            <label class="checkbox" for="visible3">
-                                <input id="visible3" class="visible" type="checkbox"/>Bleuet 2
+                        <li id="layer5" >
+                            <label class="checkbox" for="visible5">
+                                <input id="visible5" class="visible" type="checkbox"/>Chanterelle tube
                             </label>
                         </li>
                     </ul>
 
-                    <ul id="IQH2" class="layertree collapse">
-                        <li id="layer33" class="sousMenu">
-                            <label class="checkbox" for="visible33">
-                                <input id="visible33" class="visible" type="checkbox"/>IQH WMS
+                    <ul id="IQH4" class="layertree collapse">
+                        <li id="layer53" class="sousMenu">
+                            <label class="checkbox" for="visible53">
+                                <input id="visible53" class="visible" type="checkbox"/>IQH WMS
+                            </label>
+                            <fieldset class="layer">
+                                <div class="col-md-4">Opacité</div>
+                                <input class="opacity col-md-8" type="range" min="0" max="1" step="0.01"/>
+
+                            </fieldset>
+                        </li>
+                    </ul>
+                    <!-- Groupe Couche iqh5-->
+                    <!--IQH5 de la Chanterelle commune-->
+                    <ul class="group">
+                        <a id="couchedefond" class="panel-heading accordion-toggle collapsed" data-toggle="collapse"  href="#IQH5"  aria-expanded="false">
+                            <i class="visible-collapsed fa fa-plus-square-o"></i>
+                            <i class="hidden-collapsed fa fa-minus-square-o"></i>
+                        </a>
+                        <li id="layer6" >
+                            <label class="checkbox" for="visible6">
+                                <input id="visible6" class="visible" type="checkbox"/>Chanterelle commune
+                            </label>
+                        </li>
+                    </ul>
+
+                    <ul id="IQH5" class="layertree collapse">
+                        <li id="layer63" class="sousMenu">
+                            <label class="checkbox" for="visible63">
+                                <input id="visible63" class="visible" type="checkbox"/>IQH WMS
+                            </label>
+                            <fieldset class="layer">
+                                <div class="col-md-4">Opacité</div>
+                                <input class="opacity col-md-8" type="range" min="0" max="1" step="0.01"/>
+
+                            </fieldset>
+                        </li>
+                    </ul>
+                    <!-- Groupe Couche iqh6-->
+                    <!--IQH5 de la hydne ombiliqué-->
+                    <ul class="group">
+                        <a id="couchedefond" class="panel-heading accordion-toggle collapsed" data-toggle="collapse"  href="#IQH6"  aria-expanded="false">
+                            <i class="visible-collapsed fa fa-plus-square-o"></i>
+                            <i class="hidden-collapsed fa fa-minus-square-o"></i>
+                        </a>
+                        <li id="layer7" >
+                            <label class="checkbox" for="visible7">
+                                <input id="visible7" class="visible" type="checkbox"/>Hydne ombiliqué
+                            </label>
+                        </li>
+                    </ul>
+
+                    <ul id="IQH6" class="layertree collapse">
+                        <li id="layer73" class="sousMenu">
+                            <label class="checkbox" for="visible73">
+                                <input id="visible73" class="visible" type="checkbox"/>IQH WMS
+                            </label>
+                            <fieldset class="layer">
+                                <div class="col-md-4">Opacité</div>
+                                <input class="opacity col-md-8" type="range" min="0" max="1" step="0.01"/>
+
+                            </fieldset>
+                        </li>
+                    </ul>
+                    <!-- Groupe Couche iqh7-->
+                    <!--IQH5 de la matsutake-->
+                    <ul class="group">
+                        <a id="couchedefond" class="panel-heading accordion-toggle collapsed" data-toggle="collapse"  href="#IQH7"  aria-expanded="false">
+                            <i class="visible-collapsed fa fa-plus-square-o"></i>
+                            <i class="hidden-collapsed fa fa-minus-square-o"></i>
+                        </a>
+                        <li id="layer8" >
+                            <label class="checkbox" for="visible8">
+                                <input id="visible8" class="visible" type="checkbox"/>Matsutake
+                            </label>
+                        </li>
+                    </ul>
+
+                    <ul id="IQH7" class="layertree collapse">
+                        <li id="layer83" class="sousMenu">
+                            <label class="checkbox" for="visible83">
+                                <input id="visible83" class="visible" type="checkbox"/>IQH WMS
                             </label>
                             <fieldset class="layer">
                                 <div class="col-md-4">Opacité</div>
@@ -406,22 +483,22 @@
             </div>
             <!--Fin IQH des CHAMPIGNONS-->
             <div class="panel"> <!-- Service -->
-                <a id="catalogHeading" class="panel-heading accordion-toggle collapsed tetePanel" data-toggle="collapse" data-parent="#pulldown-content" href="#catalog4"  aria-expanded="false">
+                <a id="catalogHeading" class="panel-heading accordion-toggle collapsed tetePanel" data-toggle="collapse" data-parent="#pulldown-content" href="#catalog5"  aria-expanded="false">
                     <i class="visible-collapsed icon-sort-right"></i>
                     <i class="hidden-collapsed fa fa-sort-desc"></i>
                     <i class="fa fa-street-view"></i>
                     <span class="">Couches de service</span>
                 </a>
-                <div id="catalog4" class="collapse" aria-expanded="false" style="height: 0px;">
+                <div id="catalog5" class="collapse" aria-expanded="false" style="height: 0px;">
                     <!-- Définition du groupe Open Data -->
                     <ul class="group">
                         <a id="couchedefond" class="panel-heading accordion-toggle collapsed" data-toggle="collapse"  href="#weather"  aria-expanded="false">
                             <i class="visible-collapsed fa fa-plus-square-o"></i>
                             <i class="hidden-collapsed fa fa-minus-square-o"></i>
                         </a>
-                        <li id="layer4" >
+                        <li id="layer9" >
                             <label class="checkbox" for="visible4">
-                                <input id="visible4" class="visible" type="checkbox"/>Météo
+                                <input id="visible9" class="visible" type="checkbox"/>Météo
                             </label>
                         </li>
                     </ul>
@@ -461,9 +538,9 @@
                             <i class="visible-collapsed fa fa-plus-square-o"></i>
                             <i class="hidden-collapsed fa fa-minus-square-o"></i>
                         </a>
-                        <li id="layer5" >
+                        <li id="layer10" >
                             <label class="checkbox" for="visible5">
-                                <input id="visible5" class="visible" type="checkbox"/>Topographie
+                                <input id="visible10" class="visible" type="checkbox"/>Topographie
                             </label>
                         </li>
                     </ul>
@@ -588,6 +665,10 @@
                  <i class="fa fa-location-arrow awesomeBtn"></i>
                  Activer GPS
              </button>
+             <button id="gpsFin" type="button" class="buttonGPS ui-button ui-widget ui-corner-all hidden">
+                 <i class="fa fa-ban awesomeBtn"></i>
+                 Désactiver GPS
+             </button>
          </div>
      </div>
  </div>
@@ -710,8 +791,8 @@
 <!-- Libraire personnalisée pour la gestion de la recherche d'une adresse géoréférencée -->
 <script src="lib/geocodage.js" type="text/javascript"></script>
 <!-- Librairie personnalisée pour charger les données et gérer l'ajout d'éléments HTML en lien avec le code PHP (si l'utilisateur est connecté, etc.)-->
-<script src="iqh/dist/js/data_loader.js"></script>
-<!-- Librairie personnalisée pour la création des entités sur la carte -->
+ <!--<script src="iqh/dist/js/data_loader.js"></script>-->
+ <!-- Librairie personnalisée pour la création des entités sur la carte -->
 <!--<script src="iqh/dist/js/draw.js"></script>-->
 <!-- enlever interaction -->
 <!--
