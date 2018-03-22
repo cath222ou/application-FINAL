@@ -221,7 +221,7 @@ var iqh4_WMS = new ol.layer.Tile({source: new ol.source.TileWMS({
 iqh3_WMS.setVisible(true);
 
 var Groupe_IQH4 = new ol.layer.Group({layers: [iqh4_20,iqh4_50,iqh4_250,iqh4_WMS], name: 'iqh4'});
-Groupe_IQH3.setVisible(false);
+Groupe_IQH4.setVisible(false);
 
 //FIN PIED-DE-MOUTON
 
@@ -271,7 +271,7 @@ var iqh5_WMS = new ol.layer.Tile({source: new ol.source.TileWMS({
 iqh3_WMS.setVisible(true);
 
 var Groupe_IQH5 = new ol.layer.Group({layers: [iqh5_20,iqh5_50,iqh5_250,iqh5_WMS], name: 'iqh5'});
-Groupe_IQH3.setVisible(false);
+Groupe_IQH5.setVisible(false);
 
 //FIN CHANTERELLE COMMUNE
 
@@ -321,7 +321,7 @@ var iqh6_WMS = new ol.layer.Tile({source: new ol.source.TileWMS({
 iqh3_WMS.setVisible(true);
 
 var Groupe_IQH6 = new ol.layer.Group({layers: [iqh6_20,iqh6_50,iqh6_250,iqh6_WMS], name: 'iqh6'});
-Groupe_IQH3.setVisible(false);
+Groupe_IQH6.setVisible(false);
 
 //FIN HYDNE OMBILIQUÉ
 
@@ -371,7 +371,7 @@ var iqh7_WMS = new ol.layer.Tile({source: new ol.source.TileWMS({
 iqh3_WMS.setVisible(true);
 
 var Groupe_IQH7 = new ol.layer.Group({layers: [iqh7_20,iqh7_50,iqh7_250,iqh7_WMS], name: 'iqh7'});
-Groupe_IQH3.setVisible(false);
+Groupe_IQH7.setVisible(false);
 
 //FIN MATSUTAKE
 	
