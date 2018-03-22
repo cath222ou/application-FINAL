@@ -114,15 +114,5 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
-	
-	
-	app/res/xml/config.xml
 
-	<plugin name="Geolocation" value="org.apache.cordova.GeoBroker" />
-
-	app/AndroidManifest.xml
-
-	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-	<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
 </widget>
