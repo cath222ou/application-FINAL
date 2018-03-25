@@ -117,7 +117,7 @@ function supprimerCarte(){
     window.resolveLocalFileSystemURL(path, function(dir) {
         dir.getFile(fileName, {create:false}, function(fileEntry) {
            fileEntry.remove(function(){
-                alert('fichier supprimé');
+                alert('Le fichier a été supprimé avec succès');
                //Supprimer l'enregistrement correspondante dans la table
                db = window.openDatabase("Database", "1.0", "Cordova Demo", 200000);
                db.transaction(function(tx){
