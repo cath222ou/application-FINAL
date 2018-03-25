@@ -73,6 +73,7 @@ $("#download").click(function() {
     }
     //Si non pour les deux autres, lancer l'enregistrement de la carte
     else{
+        Keyboard.hide();
         $('#validation').addClass('hidden');
         $('#nomCarte').removeClass('invalid');
 
@@ -155,7 +156,7 @@ function savebase64AsImageFile(folderpath,filename,DataBlob){
     window.resolveLocalFileSystemURL(folderpath, function(dir) {
         console.log("Access to the directory granted succesfully");
         dir.getFile(filename, {create:true}, function(file) {
-            alert("La carte a été enregistrée averc succès");
+            alert("La carte a été enregistrée avec succès");
             console.log("File created succesfully.");
             file.createWriter(function(fileWriter) {
                 console.log("Writing content to file");

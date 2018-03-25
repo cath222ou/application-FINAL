@@ -5,8 +5,8 @@ body {  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;  font-size: 14
 #marker {width: 20px; height: 20px; border: 1px solid #088; border-radius: 10px; background-color: #0FF; opacity: 0.5;}
 
 /* Commande générale */
-.pull-left {float: left!important;}
-.pull-right {float: right!important;}
+/*.pull-left {float: left!important;}
+.pull-right {float: right!important;}*/
 
 /*/////////////////// L'entete ////////////////////// */
 	.navbar {position:relative; min-height:50px; margin-bottom:0px; border:0px solid transparent;}

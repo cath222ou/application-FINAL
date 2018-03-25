@@ -477,6 +477,14 @@ module.exports = [
       "cordova.plugins.Keyboard"
     ],
     "runs": true
+  },
+  {
+    "id": "cordova-plugin-native-keyboard.NativeKeyboard",
+    "file": "plugins/cordova-plugin-native-keyboard/www/NativeKeyboard.js",
+    "pluginId": "cordova-plugin-native-keyboard",
+    "clobbers": [
+      "window.NativeKeyboard"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -495,7 +503,8 @@ module.exports.metadata =
   "cordova-plugin-file-transfer": "1.5.1",
   "cordova.plugins.diagnostic": "4.0.3",
   "cordova-plugin-keyboard": "1.2.0",
-  "ionic-plugin-keyboard": "2.2.1"
+  "ionic-plugin-keyboard": "2.2.1",
+  "cordova-plugin-native-keyboard": "1.5.0"
 };
 // BOTTOM OF METADATA
 });
