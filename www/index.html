@@ -510,7 +510,6 @@
                             <fieldset class="layer">
                                 <div class="col-md-4">Opacité</div>
                                 <input class="opacity col-md-8" type="range" min="0" max="1" step="0.01"/>
-                                <IMG alt="legende" src="http://geo.weather.gc.ca/geomet/?SERVICE=WMS&version=1.0.0&layer=RDPA.6P_PR&REQUEST=getlegendgraphic&FORMAT=image/png">
                             </fieldset>
                         </li>
                         <li id="layer91" class="sousMenu">
@@ -529,7 +528,6 @@
                             <fieldset class="layer">
                                 <div class="col-md-4">Opacité</div>
                                 <input class="opacity col-md-8" type="range" min="0" max="1" step="0.01"/>
-                                <IMG alt="legende" src="http://geo.weather.gc.ca/geomet/?SERVICE=WMS&version=1.0.0&layer=HRDPS.CONTINENTAL_TT&REQUEST=getlegendgraphic&FORMAT=image/png">
                             </fieldset>
                         </li>
                     </ul>
@@ -606,8 +604,10 @@
                 <button id="retour1" class="buttonRetour ui-button ui-widget ui-corner-all"><i class="fa fa-arrow-left fa-2x awesomeBtn"></i></button>
                 <button class="buttonDownload ui-button ui-widget ui-corner-all" data-toggle="modal" data-target="#carteModal" onclick="nomCarteListeSQL()"><i class="fa fa-download fa-2x awesomeBtnDownload"></i></button>
                 <button id="barreRecheche" class="buttonRetour ui-button ui-widget ui-corner-all"><i class="fa fa-search fa-2x awesomeBtn"></i></button>
-                <!-- Barre de recherche de localisation de Google-->
+                <button class="buttonDownload ui-button ui-widget ui-corner-all" data-toggle="modal" data-target="#legendeModal"><i class="fa fa-info-circle fa-2x awesomeBtnDownload"></i></button>
+
             </div>
+            <!-- Barre de recherche de localisation de Google-->
             <div id="rechercheLocalisation" class="search-bar hidden">
                 <div class="input-group">
                     <div id="geocodage">
@@ -743,6 +743,55 @@
                  <!--Divisions cachées nécéssaires pour la suppression des cartes-->
                  <div id="idCache" class="hidden"></div>
                  <div id="pathCache" class="hidden"></div>
+             </div>
+         </div>
+     </div>
+ </div>
+ <!--Fin modal-->
+
+ <!--Modal pour la validation de suppression de carte-->
+ <div class="modal fade" id="legendeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" >
+     <div class="modal-dialog" role="document">
+         <div class="modal-content modal-content1">
+             <div class="modal-header">
+                 <h3 class="modal-title">Légende</h3>
+             </div>
+
+             <div id="accordion" class="modal-body">
+                     <h3>IQH</h3>
+                     <div class="accordionLegend">
+                         <h5>Potentiels de présence</h5>
+                         <div class="chart-legend clearfix" id="js-legend">
+                             <ul class="doughnut-legend">
+                                 <li><span style="background-color:rgba( 204, 76, 2, 0.7 )"></span>Élevé</li>
+                                 <li><span style="background-color:rgba( 254, 153, 41, 0.7 )"></span>Moyen</li>
+                                 <li><span style="background-color:rgba( 254, 217, 142, 0.7 )"></span>Faible</li>
+                             </ul>
+                         </div>
+                         <h5>Pourcentage de recouvrement d'IQH élevée</h5>
+                         <li>
+                             <div class="chart-legend" id="occupy" height="40">
+                                 <ul>
+                                     <li><p>20%</p><span style="background-color:rgba( 254, 229, 217, 0.5 );"></span></li>
+                                     <li><p>40%</p><span style="background-color:rgba( 252, 174, 145, 0.5 );"></span></li>
+                                     <li><p>60%</p><span style="background-color:rgba( 251, 106, 74, 0.5 );"></span></li>
+                                     <li><p>80%</p><span style="background-color:rgba( 222, 45, 38, 0.5 );"></span></li>
+                                     <li><p>100%</p><span style="background-color:rgba( 165, 15, 21, 0.5 );"></span></li>
+                                 </ul>
+                             </div>
+                         </li>
+                     </div>
+                 <h3>Précipitation 6h</h3>
+                 <div class="accordionLegend">
+                     <IMG alt="legende" src="http://geo.weather.gc.ca/geomet/?SERVICE=WMS&version=1.0.0&layer=RDPA.6P_PR&REQUEST=getlegendgraphic&FORMAT=image/png">
+                 </div>
+                 <h3>Température</h3>
+                 <div class="accordionLegend">
+                     <IMG alt="legende" src="http://geo.weather.gc.ca/geomet/?SERVICE=WMS&version=1.0.0&layer=HRDPS.CONTINENTAL_TT&REQUEST=getlegendgraphic&FORMAT=image/png">
+                 </div>
+             </div>
+             <div class="modal-footer">
+                 <button type="button" class="btn btn-default boutonModal" data-dismiss="modal">Fermer</button>
              </div>
          </div>
      </div>

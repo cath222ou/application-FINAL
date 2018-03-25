@@ -133,4 +133,5 @@ function supprimerCarte(){
             });
         });
     });
+    $('#deleteModal').modal('hide')
 }

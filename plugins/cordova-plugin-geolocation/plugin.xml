@@ -37,6 +37,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
             <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+            <uses-feature android:name="android.hardware.location.gps" />
         </config-file>
 
         <config-file target="res/xml/config.xml" parent="/*">
@@ -100,7 +101,12 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
             <string></string>
         </config-file>
-
+		
+		<preference name="GEOLOCATION_USAGE_DESCRIPTION" default=" " />
+        <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
+            <string>METTRE UNE DESCRIPTION AVEC LES QUOTES </string>
+        </config-file>
+		</preference>
     </platform>
 
     <!-- blackberry10 -->

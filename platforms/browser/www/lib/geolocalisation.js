@@ -39,3 +39,4 @@ $('#gpsFin').click(function(){
     $('#gpsFin').addClass('hidden');
     $('#gps').removeClass('hidden');
 });
+

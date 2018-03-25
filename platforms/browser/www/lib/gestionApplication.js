@@ -1,3 +1,8 @@
+$( function() {
+    $("#accordion").accordion();
+} );
+
+
 //Afficher la division Carte
 $('#carte').addClass('hidden');
 

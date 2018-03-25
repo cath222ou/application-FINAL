@@ -130,7 +130,7 @@ $("#download").click(function() {
 
 
         });
-       // map.renderSync();
+        map.renderSync();
 
     }
 });
