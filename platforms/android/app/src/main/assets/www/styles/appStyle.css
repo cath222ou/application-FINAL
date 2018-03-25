@@ -34,8 +34,6 @@
 .buttonDownload {
     background: #016B3B;
     border-color: #2b542c;
-    /*height: 75px;*/
-    /*width: 250px;*/
     margin-left: 2%;
     margin-top: 2%;
     margin-bottom: 2%;
@@ -173,12 +171,49 @@
 
 .finRecherche{
     margin-top:5px;
+    height: 40px;
 }
 
 .invalid{
     border-color: red;
 }
 
-.accordionLegend{
-    height: auto !important;
+.modal{
+    background-color: transparent;
+    z-index: 2000;
+}
+
+.modal-content{
+    border-radius: 10px;
+}
+
+#adress{
+    height: 40px;
+}
+
+
+#catalog4 input[type=range] {
+    width: 100px;
+    /* margin-left: 10px; */
+    display: inline;
+    margin-right: 1px;
+}
+
+#catalog5 input[type=range] {
+    width: 100px;
+    /* margin-left: 10px; */
+    display: inline;
+    margin-right: 1px;
+}
+
+#no-more-tables td{
+    margin-bottom: 10px;
+}
+
+.buttonSupprimer {
+    background: #016B3B;
+    border-color: #2b542c;
+    margin-left: 20%;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }

@@ -39,6 +39,12 @@
     },
     "cordova.plugins.diagnostic": {
       "PACKAGE_NAME": "com.phonegap.helloworld"
+    },
+    "cordova-plugin-keyboard": {
+      "PACKAGE_NAME": "com.phonegap.helloworld"
+    },
+    "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "com.phonegap.helloworld"
     }
   },
   "dependent_plugins": {

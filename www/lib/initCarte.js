@@ -395,15 +395,15 @@ Groupe_IQH7.setVisible(false);
 
    /** Définition des couches Service (overlay)  - Groupe_Topo qui contient les couches du service WMS  http://ows.geobase.ca/wms/geobase_fr et fichiers AQR+**/
 	var hydro = new ol.layer.Tile({source: new ol.source.TileWMS({
-                url: 'http://ows.geobase.ca/wms/geobase_fr',
-                params: {LAYERS: 'nhn:hydrography', VERSION: '1.1.1'}
+                url: 'http://maps.geogratis.gc.ca/wms/canvec_fr',
+                params: {LAYERS: 'hydro', VERSION: '1.3.0'}
             })
         });
     hydro.setVisible(false);
 
     var route = new ol.layer.Tile({source: new ol.source.TileWMS({
-                url: 'http://ows.geobase.ca/wms/geobase_fr',
-                params: {LAYERS: 'nrn:roadnetwork', VERSION: '1.1.1'}
+                url: 'http://maps.geogratis.gc.ca/wms/canvec_fr',
+                params: {LAYERS: 'transport', VERSION: '1.3.0'}
             })
         });
     route.setVisible(false);
@@ -424,7 +424,8 @@ Groupe_IQH7.setVisible(false);
           projection: ol.proj.get('EPSG:3857'),
 		  zoom: zoomCenter
 		});
-	
+
+
     /** Création de la Carte **/
 	var map = new ol.Map({
 		target: 'map',
@@ -442,7 +443,7 @@ Groupe_IQH7.setVisible(false);
 			new ol.interaction.DragRotateAndZoom()
 		  ])
 		});
-		
+
 /* Création du style pour la grille */
 function setGridFeatureStyle(feature,resolution) {
 	var style; 

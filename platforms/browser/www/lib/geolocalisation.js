@@ -26,13 +26,16 @@ function geolocationSuccess(position) {
 
 //Erreur de localisation
 function onError(error) {
-    alert('code: '    + error.code    + '\n' +
+    console.log('code: '    + error.code    + '\n' +
         'message: ' + error.message + '\n');
+    if (error.code == 3){
+        alert('Localisation impossible. Veuillez vérifier que votre GPS est activité sur votre appareil mobile')
+    }
 }
 
 //Fin de suivi GPS et effacer le point sur la carte de la géolocalisation
 $('#gpsFin').click(function(){
-    navigator.geolocation.clearWatch(watchId);
+    endLocalisation();
     var features = sourceVector.getFeatures();
     var featureToUpdate = features[0];
     featureToUpdate.getGeometry().setCoordinates([]);
@@ -40,3 +43,6 @@ $('#gpsFin').click(function(){
     $('#gps').removeClass('hidden');
 });
 
+function endLocalisation(){
+    navigator.geolocation.clearWatch(watchId);
+}

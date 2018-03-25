@@ -23,34 +23,49 @@ function bindInputs(layerid, layer) {
 	}
 
 map.getLayers().forEach(function(layer, i) {
-	bindInputs('#layer' + i, layer);
+    if (i < 10){
+        bindInputs('#layer' + i, layer);
+    }
+	if (i === 10){
+	    var h = i + 3;
+        bindInputs('#layer' + h, layer);
+    }
+
 	if (layer instanceof ol.layer.Group) {
-		layer.getLayers().forEach(function(sublayer, j) {
-			bindInputs('#layer' + i + j, sublayer);
-		});
+        if (i < 10) {
+            layer.getLayers().forEach(function (sublayer, j) {
+                bindInputs('#layer' + i + j, sublayer);
+            });
+        }
+        if (i === 10) {
+            var h = i + 3;
+            layer.getLayers().forEach(function (sublayer, j) {
+                bindInputs('#layer' + h + j, sublayer);
+            });
+        }
 	}
 });
 
 
-//jQuery(document).ready(function () {
-//  $('input.visible').each(function(){
-//      if ($(this).is(':checked')) {
-//         var parentId2 = $(this).closest('li').prop('id');
-//			$( "#"+parentId2+" .layer" ).css({"display":"block"})
-//      }
-//  });
-//});
+jQuery(document).ready(function () {
+  $('input.visible').each(function(){
+      if ($(this).is(':checked')) {
+         var parentId2 = $(this).closest('li').prop('id');
+			$( "#"+parentId2+" .layer" ).css({"display":"block"})
+      }
+  });
+});
 
 
-//$(document).ready(function() {
-//
-//	$("input[type=checkbox]").change(function() {
-//		var parentId = $(this).closest('li').prop('id');
-//		if ($(this).is(':checked')) {
-//			$( "#"+parentId+" .layer" ).css({"display":"block"})
-//		  }
-//		else {
-//			$( "#"+parentId+" .layer" ).css({"display":"none"})
-//		  }
-//	});
-//})
+$(document).ready(function() {
+
+	$("input[type=checkbox]").change(function() {
+		var parentId = $(this).closest('li').prop('id');
+		if ($(this).is(':checked')) {
+			$( "#"+parentId+" .layer" ).css({"display":"block"})
+		  }
+		else {
+			$( "#"+parentId+" .layer" ).css({"display":"none"})
+		  }
+	});
+})

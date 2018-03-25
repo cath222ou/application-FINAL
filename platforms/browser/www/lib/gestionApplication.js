@@ -1,5 +1,7 @@
 $( function() {
-    $("#accordion").accordion();
+    $( "#accordion" ).accordion({
+        heightStyle: "content"
+    });
 } );
 
 
@@ -43,6 +45,7 @@ $("#retour2").click(function() {
 $("#retour3").click(function() {
     $('#mesCartesHorsligne').addClass('hidden');
     $('#mesCartes').removeClass('hidden');
+    endLocalisation()
 });
 
 $("#barreRecheche").click(function() {

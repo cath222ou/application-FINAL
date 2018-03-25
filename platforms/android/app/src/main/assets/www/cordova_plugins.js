@@ -460,6 +460,23 @@ module.exports = [
     "merges": [
       "cordova.plugins.diagnostic.external_storage"
     ]
+  },
+  {
+    "id": "cordova-plugin-keyboard.keyboard",
+    "file": "plugins/cordova-plugin-keyboard/www/keyboard.js",
+    "pluginId": "cordova-plugin-keyboard",
+    "clobbers": [
+      "window.Keyboard"
+    ]
+  },
+  {
+    "id": "ionic-plugin-keyboard.keyboard",
+    "file": "plugins/ionic-plugin-keyboard/www/android/keyboard.js",
+    "pluginId": "ionic-plugin-keyboard",
+    "clobbers": [
+      "cordova.plugins.Keyboard"
+    ],
+    "runs": true
   }
 ];
 module.exports.metadata = 
@@ -476,7 +493,9 @@ module.exports.metadata =
   "cordova-plugin-file": "6.0.1",
   "cordova-sqlite-storage": "2.2.1",
   "cordova-plugin-file-transfer": "1.5.1",
-  "cordova.plugins.diagnostic": "4.0.3"
+  "cordova.plugins.diagnostic": "4.0.3",
+  "cordova-plugin-keyboard": "1.2.0",
+  "ionic-plugin-keyboard": "2.2.1"
 };
 // BOTTOM OF METADATA
 });

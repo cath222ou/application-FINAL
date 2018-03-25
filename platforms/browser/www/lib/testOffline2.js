@@ -91,10 +91,12 @@ $("#download").click(function() {
                 savebase64AsImageFile(folderpath, filename, blob);
             }, 'image/png', quality);
 
+
             empriseCarte = map.getView().calculateExtent(map.getSize());
             zoomCarte = map.getView().getZoom();
             centreCarte = map.getView().getCenter();
             pathCarte = folderpath + filename;
+
 
             //Si Autre espece est cocher, utiliser la valeur dans le champs ajouté
             if ($("#selectEspece option:selected").text() === 'Autre') {
@@ -153,14 +155,14 @@ function savebase64AsImageFile(folderpath,filename,DataBlob){
     window.resolveLocalFileSystemURL(folderpath, function(dir) {
         console.log("Access to the directory granted succesfully");
         dir.getFile(filename, {create:true}, function(file) {
-            alert("File created succesfully.");
+            alert("La carte a été enregistrée averc succès");
             console.log("File created succesfully.");
             file.createWriter(function(fileWriter) {
                 console.log("Writing content to file");
                 fileWriter.write(DataBlob);
-                alert(folderpath)
+                console.log(folderpath)
             }, function(){
-                alert('Unable to save file in path '+ folderpath);
+                alert('La carte n\'a pas été enregistrée');
             });
         });
     })
