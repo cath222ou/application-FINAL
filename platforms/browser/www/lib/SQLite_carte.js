@@ -6,8 +6,14 @@
 function onDeviceReady() {
     db = window.openDatabase("Database", "1.0", "Cordova Demo", 200000);
     db.transaction(creationTableCarte, errorCB, getCarteNonSync);
+    navigator.geolocation.getCurrentPosition(geolocationSucces2,
+        onError);
 }
 
+
+function geolocationSucces2(){
+    console.log('autorisation geolocalistion')
+}
 
 //Création de la table constats
 function creationTableCarte(tx) {

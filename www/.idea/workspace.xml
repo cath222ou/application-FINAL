@@ -13,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.50132394">
+    <splitter split-orientation="horizontal" split-proportion="0.46866727">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
@@ -45,8 +45,8 @@
           <file leaf-file-name="geolocalisation.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/lib/geolocalisation.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="102">
-                  <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="11" />
+                <state relative-caret-position="714">
+                  <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -109,10 +109,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="gestionApplication.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="gestionApplication.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lib/gestionApplication.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="17">
+                <state relative-caret-position="68">
                   <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
                   <folding />
                 </state>
@@ -129,13 +129,13 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SQLite_carte.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="SQLite_carte.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/lib/SQLite_carte.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2295">
-                  <caret line="135" column="33" lean-forward="false" selection-start-line="135" selection-start-column="33" selection-end-line="135" selection-end-column="33" />
+                <state relative-caret-position="170">
+                  <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
                   <folding>
-                    <marker date="1521761773998" expanded="true" signature="3180:3192" ph="..." />
+                    <marker date="1521992386051" expanded="true" signature="3344:3356" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -190,12 +190,12 @@
         <option value="$PROJECT_DIR$/lib/layer_tree.js" />
         <option value="$PROJECT_DIR$/lib/initCarte.js" />
         <option value="$PROJECT_DIR$/lib/testOffline2.js" />
-        <option value="$PROJECT_DIR$/lib/SQLite_carte.js" />
         <option value="$PROJECT_DIR$/lib/geolocalisation.js" />
         <option value="$PROJECT_DIR$/styles/style.css" />
         <option value="$PROJECT_DIR$/styles/appStyle.css" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/lib/gestionApplication.js" />
+        <option value="$PROJECT_DIR$/lib/SQLite_carte.js" />
       </list>
     </option>
   </component>
@@ -301,12 +301,12 @@
       <workItem from="1521549249578" duration="16438000" />
       <workItem from="1521667865918" duration="13362000" />
       <workItem from="1521752089318" duration="10085000" />
-      <workItem from="1521990154747" duration="816000" />
+      <workItem from="1521990154747" duration="1606000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152488000" />
+    <option name="totallyTimeSpent" value="153278000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1374" y="-8" width="1382" height="784" extended-state="6" />
@@ -404,7 +404,7 @@
         <state relative-caret-position="323">
           <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
           <folding>
-            <marker date="1521761773998" expanded="true" signature="3180:3192" ph="..." />
+            <marker date="1521992386051" expanded="true" signature="3344:3356" ph="..." />
           </folding>
         </state>
       </provider>
@@ -489,7 +489,7 @@
         <state relative-caret-position="374">
           <caret line="22" column="46" lean-forward="true" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
           <folding>
-            <marker date="1521761773998" expanded="true" signature="3180:3192" ph="..." />
+            <marker date="1521992386051" expanded="true" signature="3344:3356" ph="..." />
           </folding>
         </state>
       </provider>
@@ -538,7 +538,7 @@
         <state relative-caret-position="136">
           <caret line="8" column="50" lean-forward="false" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
           <folding>
-            <marker date="1521761773998" expanded="true" signature="3180:3192" ph="..." />
+            <marker date="1521992386051" expanded="true" signature="3344:3356" ph="..." />
           </folding>
         </state>
       </provider>
@@ -621,6 +621,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -700,16 +703,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/SQLite_carte.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2295">
-          <caret line="135" column="33" lean-forward="false" selection-start-line="135" selection-start-column="33" selection-end-line="135" selection-end-column="33" />
-          <folding>
-            <marker date="1521761773998" expanded="true" signature="3180:3192" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/testOffline2.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2244">
@@ -767,7 +760,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/gestionApplication.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="68">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
@@ -775,9 +768,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/geolocalisation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="11" />
+        <state relative-caret-position="714">
+          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/SQLite_carte.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding>
+            <marker date="1521992386051" expanded="true" signature="3344:3356" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
