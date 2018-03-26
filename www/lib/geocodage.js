@@ -2,7 +2,16 @@ var geocoder,markers,Lat, lon,lonLat, coordonnee;
 geocoder = new google.maps.Geocoder();
 
 // Définition de l'icone qui représentera la localisation du cityoyen une fois l'adresse saisie
-var iconStyle = new ol.style.Style({image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({anchor: [14, 46], anchorXUnits: 'pixels', anchorYUnits: 'pixels', opacity: 0.75, src: 'image/icone/red-icon58x48.png'}))});
+//var iconStyle = new ol.style.Style({image: new ol.style.Icon(/** @type {olx.style.IconOptions} */ ({anchor: [14, 46], anchorXUnits: 'pixels', anchorYUnits: 'pixels', opacity: 0.75, src: 'image/icone/red-icon58x48.png'}))});
+var iconStyle = new ol.style.Style({
+    image: new ol.style.Circle({
+        radius: 6,
+        snapToPixel: false,
+        fill: new ol.style.Fill({
+            color: 'transparent'
+        })
+    })
+});
 var vectorSource = new ol.source.Vector({});
 var vectorLayer = new ol.layer.Vector({source: vectorSource, style: iconStyle});
 map.addLayer(vectorLayer);

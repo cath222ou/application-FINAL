@@ -14,6 +14,20 @@ $("#carteBtn").click(function() {
         $('#couche').removeClass('hidden');
         $('#carte').removeClass('hidden');
         $('#accueil').addClass('hidden');
+
+        //Refermer tout les accordions
+        $('#catalogHeading1').addClass('collapsed');
+        $('#catalogHeading2').addClass('collapsed');
+        $('#catalogHeading3').addClass('collapsed');
+        $('#catalogHeading4').addClass('collapsed');
+        $('#catalog1').removeClass('in');
+        $('#catalog2').removeClass('in');
+        $('#catalog3').removeClass('in');
+        $('#catalog4').removeClass('in');
+
+        map.getView().setCenter(ol.proj.transform([lonCenter, latCenter], 'EPSG:4326', 'EPSG:3857'));
+        map.getView().setZoom(zoomCenter)
+
     }
     else {
         alert("Vous n'avez pas d'accès internet")
@@ -31,6 +45,48 @@ $("#retour1").click(function() {
     $('#couche').addClass('hidden');
     $('#carte').addClass('hidden');
     $('#accueil').removeClass('hidden');
+    //Réinitialiser les couches visibles
+    OSM.setVisible(true);
+    ImageryMapbox.setVisible(false);
+    EsriTopo.setVisible(false);
+    EsriImagery.setVisible(false);
+    Groupe_IQH1.setVisible(false);
+    Groupe_IQH2.setVisible(false);
+    Groupe_IQH3.setVisible(false);
+    Groupe_IQH4.setVisible(false);
+    Groupe_IQH5.setVisible(false);
+    Groupe_IQH6.setVisible(false);
+    Groupe_IQH7.setVisible(false);
+    precipitation_6h.setVisible(false);
+    temperature.setVisible(false);
+    temperature.setOpacity(0.7);
+    Groupe_Meteo.setVisible(false);
+    hydro.setVisible(false);
+    route.setVisible(false);
+    chemin.setVisible(false);
+    Groupe_Topo.setVisible(false);
+    map.getLayers().forEach(function(layer, i) {
+        if (i < 10){
+            bindInputs('#layer' + i, layer);
+        }
+        if (i === 10){
+            var h = i + 3;
+            bindInputs('#layer' + h, layer);
+        }
+        if (layer instanceof ol.layer.Group) {
+            if (i < 10) {
+                layer.getLayers().forEach(function (sublayer, j) {
+                    bindInputs('#layer' + i + j, sublayer);
+                });
+            }
+            if (i === 10) {
+                var h = i + 3;
+                layer.getLayers().forEach(function (sublayer, j) {
+                    bindInputs('#layer' + h + j, sublayer);
+                });
+            }
+        }
+    });
 });
 
 //Afficher la division Accueil

@@ -30,7 +30,6 @@ map.getLayers().forEach(function(layer, i) {
 	    var h = i + 3;
         bindInputs('#layer' + h, layer);
     }
-
 	if (layer instanceof ol.layer.Group) {
         if (i < 10) {
             layer.getLayers().forEach(function (sublayer, j) {

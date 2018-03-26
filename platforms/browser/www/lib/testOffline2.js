@@ -39,6 +39,11 @@ function nomCarteListeSQL(){
     }, function(){alert('connection select all')});
 }
 
+$('#nomCarte').click(function(){
+    $('#validation').addClass('hidden');
+    $('#nomCarte').removeClass('invalid');
+});
+
 
 //Enregistrement de la carte et de l'insertion des informations dans la table
 $("#download").click(function() {
@@ -50,6 +55,8 @@ $("#download").click(function() {
     var nomSansEspace = userText.replace(regExpr, "");
     nomSansEspace = nomSansEspace.split(' ').join('_');
 
+    //Compte le nombre de fois que le titre est existant dans la BD
+    //Pour vérifier que le titre de revienne pas deux fois
     var len = listeNomCarte.length;
     compte = 0;
     for (var i=0; i<len; i++){
@@ -73,9 +80,9 @@ $("#download").click(function() {
     }
     //Si non pour les deux autres, lancer l'enregistrement de la carte
     else{
-        Keyboard.hide();
         $('#validation').addClass('hidden');
         $('#nomCarte').removeClass('invalid');
+
 
         //Enregistrement de la carte à son état actuel
         map.once('postcompose', function (event) {
@@ -114,7 +121,7 @@ $("#download").click(function() {
                 }
                 //Sinon prendre la valeur coché
                 else {
-                    espece = espece + "," + $("#selectEspece2 option:selected").text();
+                    espece = espece + ", " + $("#selectEspece2 option:selected").text();
                 }
             }
 

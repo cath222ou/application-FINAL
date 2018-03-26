@@ -39,10 +39,10 @@ $('#gpsFin').click(function(){
     var features = sourceVector.getFeatures();
     var featureToUpdate = features[0];
     featureToUpdate.getGeometry().setCoordinates([]);
-    $('#gpsFin').addClass('hidden');
-    $('#gps').removeClass('hidden');
 });
 
 function endLocalisation(){
+    $('#gpsFin').addClass('hidden');
+    $('#gps').removeClass('hidden');
     navigator.geolocation.clearWatch(watchId);
 }
