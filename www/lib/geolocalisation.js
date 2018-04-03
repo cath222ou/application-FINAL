@@ -29,7 +29,7 @@ function onError(error) {
     console.log('code: '    + error.code    + '\n' +
         'message: ' + error.message + '\n');
     if (error.code == 3){
-        alert('Localisation impossible. Veuillez vérifier que votre GPS est activité sur votre appareil mobile')
+        alert('Localisation impossible. Veuillez vérifier que votre GPS est activé sur votre appareil mobile')
     }
 }
 

@@ -56,6 +56,7 @@ function afficherTableConstats(tx, results) {
     }
 }
 
+//Fonction pour aller rechercher les informations de la carte sélectionnée
 function ouvrirCarte(value){
     extent1 = value.getAttribute('data-extent1');
     extent2 = value.getAttribute('data-extent2');
@@ -73,6 +74,7 @@ function ouvrirCarte(value){
 }
 
 
+//Fonction d'insertion de l'information de la carte lors de l'enregistrement
 function insertCarte(empriseCarte,zoomCarte,centreCarte,pathCarte,nomCarte, espece){
     //a enleverr !!!
     //pathCarte='image/map_2.png';
@@ -83,14 +85,15 @@ function insertCarte(empriseCarte,zoomCarte,centreCarte,pathCarte,nomCarte, espe
 }
 
 
+//Fonction pour supprimer la table (Pour la programmation)
+// function dropTable (){
+//     db = window.openDatabase("Database", "1.0", "Cordova Demo", 200000);
+//     db.transaction(function(tx){
+//         tx.executeSql('DROP TABLE IF EXISTS carteHorsLigne', [], onDeviceReady());
+//
+//     }, errorCB);
+// }
 
-function dropTable (){
-    db = window.openDatabase("Database", "1.0", "Cordova Demo", 200000);
-    db.transaction(function(tx){
-        tx.executeSql('DROP TABLE IF EXISTS carteHorsLigne', [], onDeviceReady());
-
-    }, errorCB);
-}
 
 $('#deleteModal').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget); // Button that triggered the modal
@@ -99,7 +102,7 @@ $('#deleteModal').on('show.bs.modal', function (event) {
     $('#pathCache').text(button.data('path'));
     var modal = $(this);
     modal.find('.modal-title').text('Supression de la carte: ' + nomCarte);
-    modal.find('.modal-body h5').text('La carte '+nomCarte+' sera définitivement supprimée de votre appareil mobile. Veuillez confirmer la suppression.');
+    modal.find('.modal-body h5').text('La carte «'+nomCarte+'» sera définitivement supprimée de votre appareil mobile. Veuillez confirmer la suppression.');
 });
 
 
@@ -126,7 +129,7 @@ function supprimerCarte(){
             },function(error){
                 alert('Erreur de supression')
             },function(){
-                alert('le fichier nexiste pas')
+                alert('Ce fichier n\'existe pas')
             });
         });
     });

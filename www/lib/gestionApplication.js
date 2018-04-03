@@ -1,3 +1,4 @@
+//Fonction  nécessaire pour l'accordéon de la légende
 $( function() {
     $( "#accordion" ).accordion({
         heightStyle: "content"
@@ -9,7 +10,9 @@ $( function() {
 $('#carte').addClass('hidden');
 
 
+//Affichage de la carte en ligne (bouton Carte)
 $("#carteBtn").click(function() {
+    //L'afficher s'il y a une connexion internet
     if (navigator.onLine === true) {
         $('#couche').removeClass('hidden');
         $('#carte').removeClass('hidden');
@@ -25,16 +28,18 @@ $("#carteBtn").click(function() {
         $('#catalog3').removeClass('in');
         $('#catalog4').removeClass('in');
 
+        //Rencentrer la carte au zoom initial
         map.getView().setCenter(ol.proj.transform([lonCenter, latCenter], 'EPSG:4326', 'EPSG:3857'));
         map.getView().setZoom(zoomCenter)
 
     }
+    //Si aucune connexion
     else {
         alert("Vous n'avez pas d'accès internet")
     }
 });
 
-//Afficher la division Mes Cartes
+//Afficher la division Mes Cartes (bouton Mes Cartes)
 $("#mesCartesBtn").click(function() {
     $('#mesCartes').removeClass('hidden');
     $('#accueil').addClass('hidden');
@@ -89,7 +94,7 @@ $("#retour1").click(function() {
     });
 });
 
-//Afficher la division Accueil
+//Afficher la division Accueil à partir de Mes cartes
 $("#retour2").click(function() {
     $('#mesCartes').addClass('hidden');
    // $('#mesCartesHorsligne').addClass('hidden');
@@ -104,11 +109,13 @@ $("#retour3").click(function() {
     endLocalisation()
 });
 
+//Afficher la barre de recherche de localisation
 $("#barreRecheche").click(function() {
     $('#rechercheLocalisation').removeClass('hidden');
     $('#boutons').addClass('hidden');
 });
 
+//Fermer la barre de recherche de localisation
 $("#finRecherche").click(function() {
     $('#rechercheLocalisation').addClass('hidden');
     $('#boutons').removeClass('hidden');

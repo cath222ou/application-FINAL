@@ -24,6 +24,7 @@ $( "#selectEspece2" ).on("change", function(){
     }
 });
 
+//Fonction pour vérifier que le nom de la carte n'est pas déjjà existante dans la BD
 function nomCarteListe(tx,results){
     var len = results.rows.length;
     for (var i=0; i<len; i++){
@@ -32,6 +33,7 @@ function nomCarteListe(tx,results){
 
 }
 
+//Fonction pour vérifier que le nom de la carte n'est pas déjjà existante dans la BD
 function nomCarteListeSQL(){
     db = window.openDatabase("Database", "1.0", "Cordova Demo", 200000);
     db.transaction(function(tx){
@@ -39,6 +41,7 @@ function nomCarteListeSQL(){
     }, function(){alert('connection select all')});
 }
 
+//Cacher le message d'erreur en rouge lorsque la personne appuie sur le champs texte
 $('#nomCarte').click(function(){
     $('#validation').addClass('hidden');
     $('#nomCarte').removeClass('invalid');
@@ -74,7 +77,7 @@ $("#download").click(function() {
     }
     //Vérifier si champs de titre existe déjà dans la mémoire interne
     else if(compte > 0){
-        $('#validation').text('Ce titre de carte existe déjà');
+        $('#validation').text('Ce titre existe déjà');
         $('#validation').removeClass('hidden');
         $('#nomCarte').addClass('invalid');
     }
@@ -145,13 +148,8 @@ $("#download").click(function() {
     }
 });
 
-/**
- * Create a Image file according to its database64 content only.
- *
- * @param folderpath {String} The folder where the file will be created
- * @param filename {String} The name of the file that will be created
- * @param content {Base64 String} Important : The content can't contain the following string (data:image/png[or any other format];base64,). Only the base64 string is expected.
- */
+
+//Fonction pour transformer l'image encodé en image de format PNG
 function savebase64AsImageFile(folderpath,filename,DataBlob){
 
 

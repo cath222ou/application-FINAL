@@ -4,12 +4,13 @@ var trackLayer;
 var sourceVector;
 var pointCoord;
 
+
+//Création de la carte selon la carte sélectionnée
 function initializeMap(extent1,extent2,extent3,extent4, zoom, centre1, centre2, path){
     $("#mapOffline").empty();
 
     var extentTot = [parseFloat(extent1),parseFloat(extent2),parseFloat(extent3),parseFloat(extent4)];
     var centreTot = [parseFloat(centre1),parseFloat(centre2)];
-
 
     var imageCarte = new ol.layer.Image({
         source: new ol.source.ImageStatic({
@@ -19,8 +20,6 @@ function initializeMap(extent1,extent2,extent3,extent4, zoom, centre1, centre2, 
             crossOrigin:'anonymous'
         })
     });
-///////////////////////
-
 
         pointCoord = new ol.geom.Point([]);
 
@@ -52,9 +51,6 @@ function initializeMap(extent1,extent2,extent3,extent4, zoom, centre1, centre2, 
             source: sourceVector,
             visible: true,
         });
-
-
-//////////////////////////////
 
     mapOffline = new ol.Map({
         layers: [imageCarte, trackLayer],
